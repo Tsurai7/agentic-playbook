@@ -8,7 +8,7 @@ set -euo pipefail
 # - Writes a managed always-on block with @-imports into ~/.claude/CLAUDE.md.
 #
 # Re-running is safe (idempotent). ./eject.sh reverses everything exactly.
-# Override the target with CLAUDE_DIR=/path (used by tests).
+# Override the target with CLAUDE_DIR=/path (override for sandboxed runs).
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CLAUDE_DIR="${CLAUDE_DIR:-$HOME/.claude}"
@@ -25,7 +25,13 @@ for src in "$REPO_DIR"/skills/*/; do
   src="${src%/}"
   name="$(basename "$src")"
   dest="$SKILLS_DIR/$name"
-  if [ -L "$dest" ]; then
+  if [ -L "$dest" ] && [ ! -e "$dest" ]; then
+    # A dangling link is not a working skill for anyone — safe to take over
+    # (happens when a previous clone of this repo was moved or deleted).
+    echo "RELINK $name — replacing dangling symlink ($(readlink "$dest"))"
+    ln -sfn "$src" "$dest"
+    linked=$((linked + 1))
+  elif [ -L "$dest" ]; then
     case "$(readlink "$dest")" in
       "$REPO_DIR"/*)
         ln -sfn "$src" "$dest"
@@ -47,9 +53,15 @@ done
 
 touch "$CLAUDE_MD"
 if grep -qF "$BEGIN_MARK" "$CLAUDE_MD"; then
+  # Drop the old block plus the one separator blank line the append below adds,
+  # so re-runs keep CLAUDE.md byte-for-byte stable instead of accumulating blanks.
   tmp="$(mktemp)"
-  awk -v b="$BEGIN_MARK" -v e="$END_MARK" \
-    '$0==b{inblk=1} !inblk{print} $0==e{inblk=0}' "$CLAUDE_MD" >"$tmp"
+  awk -v b="$BEGIN_MARK" -v e="$END_MARK" '
+    $0==b { inblk=1; if (n > 0 && buf[n-1] == "") n--; next }
+    $0==e { inblk=0; next }
+    !inblk { buf[n++] = $0 }
+    END { for (i = 0; i < n; i++) print buf[i] }
+  ' "$CLAUDE_MD" >"$tmp"
   mv "$tmp" "$CLAUDE_MD"
 fi
 printf '\n%s\n' "$BEGIN_MARK

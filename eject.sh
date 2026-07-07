@@ -7,7 +7,8 @@ set -euo pipefail
 # - Removes only the managed block from ~/.claude/CLAUDE.md.
 #
 # Real skill directories, foreign symlinks, and the rest of CLAUDE.md are
-# never touched. Override the target with CLAUDE_DIR=/path (used by tests).
+# never touched. Override the target with CLAUDE_DIR=/path (override for
+# sandboxed runs).
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CLAUDE_DIR="${CLAUDE_DIR:-$HOME/.claude}"
@@ -31,9 +32,15 @@ if [ -d "$SKILLS_DIR" ]; then
 fi
 
 if [ -f "$CLAUDE_MD" ] && grep -qF "$BEGIN_MARK" "$CLAUDE_MD"; then
+  # Drop the block plus the one separator blank line inject.sh added, restoring
+  # the pre-install bytes exactly.
   tmp="$(mktemp)"
-  awk -v b="$BEGIN_MARK" -v e="$END_MARK" \
-    '$0==b{inblk=1} !inblk{print} $0==e{inblk=0}' "$CLAUDE_MD" >"$tmp"
+  awk -v b="$BEGIN_MARK" -v e="$END_MARK" '
+    $0==b { inblk=1; if (n > 0 && buf[n-1] == "") n--; next }
+    $0==e { inblk=0; next }
+    !inblk { buf[n++] = $0 }
+    END { for (i = 0; i < n; i++) print buf[i] }
+  ' "$CLAUDE_MD" >"$tmp"
   mv "$tmp" "$CLAUDE_MD"
   echo "managed block removed from $CLAUDE_MD"
 fi
