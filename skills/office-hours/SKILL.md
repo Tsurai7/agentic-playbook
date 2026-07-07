@@ -5,8 +5,9 @@ description: Pressure-test an idea before building it - premise challenge, statu
 
 # Office hours
 
-Adapted from the gstack `office-hours` skill (upstream `office-hours/SKILL.md`
-v2.0.0, not publicly available). Upstream's canonical six are: demand reality,
+Adapted from the gstack `office-hours` skill by Garry Tan
+([garrytan/gstack](https://github.com/garrytan/gstack), MIT; upstream
+`office-hours/SKILL.md` v2.0.0). Upstream's canonical six are: demand reality,
 status quo, desperate specificity, narrowest wedge, observation & surprise, and
 future-fit. Ours is a **deliberate adaptation**, not a reconstruction: upstream's
 own smart-routing sends "pure engineering/infra" work to its Q2 + Q4 only, so the

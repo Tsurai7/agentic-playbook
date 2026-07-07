@@ -11,9 +11,10 @@ description: >-
 
 ## Provenance
 
-Distilled from the gstack `/investigate` skill (not publicly available) —
-method only, none of the gstack runtime (no telemetry, gbrain, or scope-freeze
-tooling carried over).
+Distilled from the gstack `/investigate` skill by Garry Tan
+([garrytan/gstack](https://github.com/garrytan/gstack), MIT) — method only,
+none of the gstack runtime (no telemetry, gbrain, or scope-freeze tooling
+carried over).
 
 ## The Iron Law
 
