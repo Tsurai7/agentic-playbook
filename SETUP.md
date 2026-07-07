@@ -16,7 +16,9 @@ git clone https://github.com/Tsurai7/agentic-playbook.git ~/agentic-playbook
 `inject.sh` symlinks `skills/*` into `~/.claude/skills/` and appends a managed
 `@`-import block (principles + user rules) to `~/.claude/CLAUDE.md`. It never
 overwrites anything it does not own: an existing skill directory, or a symlink
-pointing somewhere else, is skipped with a warning. Re-running it is safe —
+pointing somewhere else, is skipped with a warning. The one exception is a
+dangling symlink (its target no longer exists — say, a moved or deleted old
+clone): a dead link serves nobody, so it is replaced. Re-running is safe —
 already-managed links are refreshed and the block is replaced in place.
 
 Remove with one command:
@@ -30,7 +32,7 @@ the clone and only the managed block. The rest of your skills and `CLAUDE.md`
 are untouched.
 
 Restart Claude Code after either command. Verify after install: in a new
-session the eight skills appear in the available-skills list, and `/memory`
+session the ten skills appear in the available-skills list, and `/memory`
 shows the imported principle files.
 
 Note: if another config manager already installed skills with the same names
@@ -71,6 +73,17 @@ Get-ChildItem "$env:USERPROFILE\agentic-playbook\skills" -Directory |
 
 4. Verify the same way: new session, skills listed, `/memory` shows the
    imports.
+
+Uninstall (native PowerShell) — the reverse of steps 2 and 3: remove the copied
+skill directories, then delete the four `@`-import lines you added:
+
+```powershell
+Get-ChildItem "$env:USERPROFILE\agentic-playbook\skills" -Directory |
+  ForEach-Object { Remove-Item "$env:USERPROFILE\.claude\skills\$($_.Name)" -Recurse -Force -ErrorAction SilentlyContinue }
+```
+
+Then open `%USERPROFILE%\.claude\CLAUDE.md` and remove the four
+`@C:\Users\<you>\agentic-playbook\...` lines from step 3.
 
 ## Updating
 

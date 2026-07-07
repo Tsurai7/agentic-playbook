@@ -24,10 +24,14 @@ repo and is now the source of truth for that layer.
 - `skills/` — triggered guidance, loaded on description match:
   - [office-hours](skills/office-hours/SKILL.md) — pressure-test an idea before
     building it.
+  - [plan-review](skills/plan-review/SKILL.md) — engineering review of an
+    implementation plan before any code is written.
   - [systematic-debugging](skills/systematic-debugging/SKILL.md) — root-cause
     debugging discipline.
   - [verification-before-completion](skills/verification-before-completion/SKILL.md)
     — evidence before claiming done.
+  - [staff-review](skills/staff-review/SKILL.md) — staff-level code review
+    method: intent first, calibrated confidence, verified findings.
   - [answer-shapes](skills/answer-shapes/SKILL.md) — output skeletons for
     common coding deliverables.
   - [model-orchestration](skills/model-orchestration/SKILL.md) — route sub-tasks
@@ -62,4 +66,4 @@ them in whatever always-on layer your harness has.
 ## License
 
 MIT — see [LICENSE](LICENSE). Third-party attributions (adapted material) are
-listed there and in the Provenance section of the affected files.
+noted in the Provenance section of each affected file.

@@ -19,14 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-Third-party attributions:
-
-- principles/karpathy-guidelines.md is adapted from
-  multica-ai/andrej-karpathy-skills (MIT License),
-  https://github.com/multica-ai/andrej-karpathy-skills
-- skills/office-hours and skills/systematic-debugging adapt methods from the
-  gstack skill set (not publicly available); see the Provenance section in
-  each file.
