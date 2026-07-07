@@ -15,7 +15,8 @@ repo and is now the source of truth for that layer.
   - [honesty.md](principles/honesty.md) — back claims with evidence, separate
     fact from inference, report outcomes faithfully, no hidden actions.
   - [karpathy-guidelines.md](principles/karpathy-guidelines.md) — think before
-    coding, simplicity first, surgical changes, goal-driven execution.
+    coding, goal-driven execution; simplicity and surgical-change rules merged
+    into coding-principles.
 - [user-rules/](user-rules/coding-principles.md) — always-on rules:
   - [coding-principles.md](user-rules/coding-principles.md) — minimal scope, no
     over-engineering, existing conventions, comments, useful tests only.

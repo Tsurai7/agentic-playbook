@@ -2,7 +2,8 @@
 name: verification-before-completion
 description: >-
   Require evidence before claiming work is complete, fixed, or tests pass. Use
-  before commits, PRs, or saying a task is done.
+  before commits, PRs, or any "done", "fixed", "works now", "should work", or
+  "tests pass" statement.
 ---
 
 # Verification before completion
@@ -20,7 +21,7 @@ Do not claim completion until you have **run** the relevant check and **seen** s
 | Tests pass | Test command output showing pass |
 | Build succeeds | Build command exit 0 + output |
 | Bug fixed | Reproduction steps pass after fix |
-| Lint clean | Linter on changed files |
+| Lint clean | Linter output on changed files showing zero errors |
 
 ## Process
 

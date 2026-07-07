@@ -41,19 +41,14 @@ often a finer, cheaper lever than changing model:
 So the ladder is **right effort → right tier → orchestration**: reach for the next lever only
 when the cheaper one is exhausted.
 
-> Measured caveat (Haiku × trivial/easy SWE tasks, n=3, 2026-06): the effort dial moved **neither
-> correctness nor cost** on these tiers — `trivial` was identical low-vs-high to the dollar, and
-> `easy` was noise-dominated (the bare and configured arms disagreed on the *sign* of the effect).
-> Effort bites on **reasoning-bound** work; where a weak model's cost is dominated by **tool turns**
-> (the `easy` configured arm ran 10–12 turns vs 5–6 bare), gate the *tools* — right-size the
-> tooling — not the thinking.
+> Measured caveat (Haiku × trivial/easy SWE tasks, n=3, 2026-06): the effort dial moved neither
+> correctness nor cost. Effort bites on **reasoning-bound** work; where a weak model's cost is
+> dominated by **tool turns**, right-size the tools, not the thinking.
 
 ## The default pattern: plan strong, execute cheap, escalate on failure
 
-These three steps are a **Thinker → Worker → Verifier** division of labor — the same role taxonomy
-Sakana's Fugu / TRINITY router routes over
-per turn (a learned policy emits a role *and* a model each step). Reserve the strong tier for the
-**Thinker** step; a cheap tier handles **Worker** (execute) and **Verifier** (check).
+These three steps are a **Thinker → Worker → Verifier** division of labor. Reserve the strong
+tier for the **Thinker** step; a cheap tier handles **Worker** (execute) and **Verifier** (check).
 
 1. **Plan with the strong tier.** Decompose the task into sub-tasks each small enough to
    hand off with an unambiguous spec: the file(s), the exact change, and a verifiable
@@ -71,37 +66,14 @@ per turn (a learned policy emits a role *and* a model each step). Reserve the st
    If a cheap tier fails the check twice, escalate that sub-task one tier up — do not loop a
    weak model on a problem above its weight. Escalation is the exception, not the plan.
 
-## Delegation protocol (when the roles are installed)
+## Delegation protocol
 
-When your config ships these four subagent roles (e.g. rendered to `~/.claude/agents/`),
-each carries a pinned tier and a body with the scope guard, AC discipline,
-status protocol, and environment notes — so a delegation prompt only needs the task:
-
-| Role | Tier | Hand it |
-|------|------|---------|
-| `implementer` | mid | a plan file with hard AC (code changes) |
-| `doc-writer` | cheap | an explicit item list (mechanical docs) |
-| `verifier` | mid | an AC list + gate commands (read-only check) |
-| `researcher` | mid + web | a question or doc to refresh, citations required |
-
-These delegation mechanics were proven out in two live multi-agent delegation waves (June–July 2026):
-
-1. **Plan files, not chat specs.** Each delegation gets a written plan with hard
-   acceptance criteria and an explicit file scope; plans in the same wave never share
-   files, so agents can run in parallel without conflicts.
-2. **AC is the definition of done.** An agent that cannot meet an AC stops and reports
-   the blocker; it does not improvise around it.
-3. **Verify per wave.** The orchestrator (or the `verifier` role) runs the repo gates
-   after each wave, before the next starts.
-4. **Expect deaths.** Agents die mid-run (API errors); relaunch with a precise
-   done/remaining map derived from the working tree, not from memory.
-5. **Diff-check cheap-tier claims.** Reports from the cheap tier get compared against
-   the actual diff before acceptance — measured failure mode: overstated docs claims.
-6. **Statuses are structured.** `DONE | DONE_WITH_CONCERNS | BLOCKED | NEEDS_CONTEXT`,
-   with per-AC evidence, so the orchestrator parses instead of re-reading transcripts.
-
-Claims discipline: the roles mechanize delegation; any token-savings number is a
-hypothesis until a side-by-side measurement lands.
+If your config ships pinned subagent roles (`implementer` / `doc-writer` /
+`verifier` / `researcher`), delegate to them instead of hand-authoring the
+boilerplate, and follow the six field-tested delegation rules — plan files with
+hard acceptance criteria, per-wave verification, diff-checking cheap-tier
+claims, structured statuses — in
+[references/delegation-protocol.md](references/delegation-protocol.md).
 
 ## When NOT to orchestrate
 

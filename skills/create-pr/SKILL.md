@@ -7,7 +7,8 @@ description: >-
 
 # Create pull request
 
-Use **`gh`** for all GitHub PR tasks.
+Use **`gh`** for all GitHub PR tasks. The PR describes **all commits** on the
+branch since it diverged from base — not only the latest.
 
 ## Before creating
 
@@ -17,8 +18,6 @@ Run in parallel:
 - `git diff` — staged and unstaged
 - Branch tracking vs remote (`git status` / `git branch -vv`)
 - `git log` and `git diff [base]...HEAD` — full branch history since diverging from base
-
-Analyze **all commits** on the branch, not only the latest.
 
 ## Create PR
 
@@ -42,6 +41,6 @@ EOF
 ## Rules
 
 - **NEVER** update git config
-- **Do not push** unless needed for the PR
+- Push only the current branch; **never** force-push
 - Use HEREDOC for body formatting
 - Complete sentences in title and summary

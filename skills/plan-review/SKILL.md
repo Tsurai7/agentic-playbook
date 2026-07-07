@@ -11,13 +11,6 @@ description: >-
 
 # Plan review
 
-## Provenance
-
-Distilled from the gstack `/plan-eng-review` skill by Garry Tan
-([garrytan/gstack](https://github.com/garrytan/gstack), MIT) — method only,
-none of the runtime (no brain preflight, design-doc discovery, or interactive
-scaffolding carried over).
-
 ## Confirm the target
 
 Name what is being reviewed (which plan, solving what problem) and the goal it
@@ -42,7 +35,7 @@ the section reviews below.
 
 ## Section review
 
-Work in order, at most ~8 top issues per section:
+Work in order, at most ~8 top issues total across sections:
 **Architecture → Code quality → Tests → Performance.**
 For tests, demand a verifiable check per plan step — a plan step without its
 proving command is a wish (see `verification-before-completion`).
@@ -57,3 +50,10 @@ proving command is a wish (see `verification-before-completion`).
   one the plan created?
 
 End with a verdict: approve / reduce scope / rework, with the blocking items.
+
+## Provenance
+
+Distilled from the gstack `/plan-eng-review` skill by Garry Tan
+([garrytan/gstack](https://github.com/garrytan/gstack), MIT) — method only,
+none of the runtime (no brain preflight, design-doc discovery, or interactive
+scaffolding carried over).

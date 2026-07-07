@@ -21,7 +21,7 @@ Run in parallel:
 ## Message
 
 - 1–2 sentences focused on **why**, not only what
-- Accurate type: add / update / fix / refactor / test / docs
+- Match the repo's message convention (from `git log`); default types if none: add / update / fix / refactor / test / docs
 - Do not commit secrets (`.env`, credentials, etc.)
 
 ## Commit command

@@ -5,15 +5,8 @@ description: Pressure-test an idea before building it - premise challenge, statu
 
 # Office hours
 
-Adapted from the gstack `office-hours` skill by Garry Tan
-([garrytan/gstack](https://github.com/garrytan/gstack), MIT; upstream
-`office-hours/SKILL.md` v2.0.0). Upstream's canonical six are: demand reality,
-status quo, desperate specificity, narrowest wedge, observation & surprise, and
-future-fit. Ours is a **deliberate adaptation**, not a reconstruction: upstream's
-own smart-routing sends "pure engineering/infra" work to its Q2 + Q4 only, so the
-four product-stage questions were replaced with engineering-relevant ones (premise
-challenge, evidence of value, risk & verification, cost of keeping) — see the six
-below. This skill is the single source of truth going forward.
+Pressure-test an idea before building it: six forcing questions, then a
+verdict.
 
 ## The six forcing questions
 
@@ -43,3 +36,12 @@ If the target repo keeps design docs, write the session to
 `docs/design/<topic>-office-hours.md` with an explicit **Verdict** section;
 otherwise deliver the verdict in the response. End every vet with a verdict +
 the narrowest wedge, never with an open-ended options list.
+
+## Provenance
+
+Adapted from the gstack `office-hours` skill by Garry Tan
+([garrytan/gstack](https://github.com/garrytan/gstack), MIT; upstream
+`office-hours/SKILL.md` v2.0.0). A deliberate adaptation, not a reconstruction:
+upstream's four product-stage questions were replaced with engineering-relevant
+ones (premise challenge, evidence of value, risk & verification, cost of
+keeping). This file is the single source of truth going forward.

@@ -9,13 +9,6 @@ description: >-
 
 # Systematic debugging
 
-## Provenance
-
-Distilled from the gstack `/investigate` skill by Garry Tan
-([garrytan/gstack](https://github.com/garrytan/gstack), MIT) — method only,
-none of the gstack runtime (no telemetry, gbrain, or scope-freeze tooling
-carried over).
-
 ## The Iron Law
 
 No fixes without investigation. Reproduce the failure first, read the actual error
@@ -24,11 +17,11 @@ A fix that skips investigation is a guess.
 
 ## Hypothesis loop
 
-Before each probe, state the current hypothesis in one line: what you believe is
-wrong and why. Design the cheapest observation that can falsify it — a log line, an
-assertion, a targeted read — and run it. Record what each probe ruled out; an
-in-conversation trail is fine, the point is an explicit record, not a file format.
-If the hypothesis is wrong, don't guess again blind — return to gathering evidence.
+Before each probe, write one line:
+`HYPOTHESIS: <what you believe is wrong and why> → TEST: <cheapest observation that can falsify it>`.
+Run the test — a log line, an assertion, a targeted read — and record what it
+ruled out. If the hypothesis is wrong, don't guess again blind — return to
+gathering evidence.
 
 ## Trace the data, not the blame
 
@@ -39,7 +32,8 @@ a guess, not a diagnosis.
 
 ## The 3-strikes stop rule
 
-After 3 failed fix attempts, STOP. Do not try variant #4 of the same idea.
+After 3 failed fix attempts — three `HYPOTHESIS` lines whose fixes did not
+survive their test — STOP. Do not try variant #4 of the same idea.
 Re-read the evidence, list what every failed attempt assumed in common, and
 question that shared assumption — it is usually a wrong architectural belief, not a
 string of bad luck. Escalate or ask the user rather than continuing to guess.
@@ -48,3 +42,10 @@ string of bad luck. Escalate or ask the user rather than continuing to guess.
 
 A fix ships only with the reproducing check that now passes — see
 `verification-before-completion` for the evidence bar before claiming done.
+
+## Provenance
+
+Distilled from the gstack `/investigate` skill by Garry Tan
+([garrytan/gstack](https://github.com/garrytan/gstack), MIT) — method only,
+none of the gstack runtime (no telemetry, gbrain, or scope-freeze tooling
+carried over).

@@ -12,12 +12,6 @@ description: >-
 
 # Staff review
 
-## Provenance
-
-Distilled from the gstack `/review` skill by Garry Tan
-([garrytan/gstack](https://github.com/garrytan/gstack), MIT) — method only,
-none of the runtime (specialist dispatch, Greptile/Codex, learnings database).
-
 ## Intent first, quality second
 
 Before judging the code, check **did they build what was requested — nothing
@@ -61,3 +55,9 @@ Every finding gets an action: mechanical and safe → fix it; behavioral or risk
 refute each of your own findings — and remember risk is not proportional to
 diff size: a 5-line auth change can be critical. Deliver the verdict per the
 `answer-shapes` code-review shape.
+
+## Provenance
+
+Distilled from the gstack `/review` skill by Garry Tan
+([garrytan/gstack](https://github.com/garrytan/gstack), MIT) — method only,
+none of the runtime (specialist dispatch, Greptile/Codex, learnings database).

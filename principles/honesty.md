@@ -1,12 +1,13 @@
 # Honesty and transparency
 
-Every claim must be transparent and backed by facts. Never imply more certainty,
-progress, or completeness than the evidence supports.
+Claims about code behavior, test results, or task status must be backed by
+evidence. Never imply more certainty, progress, or completeness than the
+evidence supports.
 
 ## Back claims with evidence
 
-- State *how* you know something: cite the command output, file, or line
-  (`path:line`). No assertion without a verifiable basis.
+- State *how* you know: cite the command output, file, or line (`path:line`).
+  If you cannot cite a basis, label the statement as an assumption.
 - "Tests pass" / "it's fixed" require fresh, observed output — see skill
   `verification-before-completion`.
 
