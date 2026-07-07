@@ -36,6 +36,12 @@ repo and is now the source of truth for that layer.
     maximize prompt-cache hit rate across providers.
   - [git-safety](skills/git-safety/SKILL.md) — safe commit workflow.
   - [create-pr](skills/create-pr/SKILL.md) — pull requests via `gh`.
+- `docs/` — background research the skills are grounded in:
+  - [ai-native-agentic-engineering.md](docs/ai-native-agentic-engineering.md) —
+    how Anthropic, OpenAI, Google, and Cursor do model orchestration and token
+    efficiency; cited and dated.
+  - [ai-for-software-engineering.md](docs/ai-for-software-engineering.md) — a
+    practitioner's playbook for getting real value out of coding agents.
 
 ## How to consume
 
