@@ -13,8 +13,8 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CLAUDE_DIR="${CLAUDE_DIR:-$HOME/.claude}"
 SKILLS_DIR="$CLAUDE_DIR/skills"
 CLAUDE_MD="$CLAUDE_DIR/CLAUDE.md"
-BEGIN_MARK="<!-- BEGIN agentic-principles (managed) -->"
-END_MARK="<!-- END agentic-principles (managed) -->"
+BEGIN_MARK="<!-- BEGIN agentic-playbook (managed) -->"
+END_MARK="<!-- END agentic-playbook (managed) -->"
 
 removed=0
 if [ -d "$SKILLS_DIR" ]; then

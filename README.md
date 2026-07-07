@@ -1,4 +1,4 @@
-# agentic-principles
+# agentic-playbook
 
 Portable, toolset-agnostic guidance for coding agents: always-on principles,
 user rules, and triggered skills. Built for Claude Code; the content is plain

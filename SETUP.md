@@ -9,8 +9,8 @@ principles and user rules are imported into `~/.claude/CLAUDE.md`.
 Install with one command:
 
 ```bash
-git clone https://github.com/Tsurai7/agentic-principles.git ~/agentic-principles
-~/agentic-principles/inject.sh
+git clone https://github.com/Tsurai7/agentic-playbook.git ~/agentic-playbook
+~/agentic-playbook/inject.sh
 ```
 
 `inject.sh` symlinks `skills/*` into `~/.claude/skills/` and appends a managed
@@ -22,7 +22,7 @@ already-managed links are refreshed and the block is replaced in place.
 Remove with one command:
 
 ```bash
-~/agentic-principles/eject.sh
+~/agentic-playbook/eject.sh
 ```
 
 `eject.sh` is the exact reverse: it removes only the symlinks that point into
@@ -47,7 +47,7 @@ Native (PowerShell):
 1. Clone the repository:
 
 ```powershell
-git clone https://github.com/Tsurai7/agentic-principles.git "$env:USERPROFILE\agentic-principles"
+git clone https://github.com/Tsurai7/agentic-playbook.git "$env:USERPROFILE\agentic-playbook"
 ```
 
 2. Copy the skills. Copying is the simplest reliable option — directory
@@ -55,7 +55,7 @@ git clone https://github.com/Tsurai7/agentic-principles.git "$env:USERPROFILE\ag
 
 ```powershell
 New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null
-Get-ChildItem "$env:USERPROFILE\agentic-principles\skills" -Directory |
+Get-ChildItem "$env:USERPROFILE\agentic-playbook\skills" -Directory |
   ForEach-Object { Copy-Item $_.FullName "$env:USERPROFILE\.claude\skills\$($_.Name)" -Recurse -Force }
 ```
 
@@ -63,10 +63,10 @@ Get-ChildItem "$env:USERPROFILE\agentic-principles\skills" -Directory |
    using absolute Windows paths:
 
 ```markdown
-@C:\Users\<you>\agentic-principles\principles\honesty.md
-@C:\Users\<you>\agentic-principles\principles\karpathy-guidelines.md
-@C:\Users\<you>\agentic-principles\user-rules\coding-principles.md
-@C:\Users\<you>\agentic-principles\user-rules\communication.md
+@C:\Users\<you>\agentic-playbook\principles\honesty.md
+@C:\Users\<you>\agentic-playbook\principles\karpathy-guidelines.md
+@C:\Users\<you>\agentic-playbook\user-rules\coding-principles.md
+@C:\Users\<you>\agentic-playbook\user-rules\communication.md
 ```
 
 4. Verify the same way: new session, skills listed, `/memory` shows the
