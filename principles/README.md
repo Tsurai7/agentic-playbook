@@ -5,8 +5,7 @@ agent takes, without waiting for a trigger to match. Load every `*.md` here
 into your agent's always-on layer:
 
 - **Claude Code** — inline into `CLAUDE.md` (global `~/.claude/CLAUDE.md` or
-  per-project).
-- **Cursor** — render as an `alwaysApply: true` rule in `~/.cursor/rules/`.
+  per-project); `../inject.sh` does this with a managed block.
 - **Other harnesses** — include in `AGENTS.md` or the system prompt.
 
 ## Principle vs skill — where does new guidance go?

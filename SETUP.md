@@ -6,37 +6,36 @@ principles and user rules are imported into `~/.claude/CLAUDE.md`.
 
 ## macOS / Linux
 
-1. Clone the repository:
+Install with one command:
 
 ```bash
 git clone https://github.com/Tsurai7/agentic-principles.git ~/agentic-principles
+~/agentic-principles/inject.sh
 ```
 
-2. Link the skills. Symlinks are preferred over copies — a `git pull` in the
-   clone updates them with no extra step:
+`inject.sh` symlinks `skills/*` into `~/.claude/skills/` and appends a managed
+`@`-import block (principles + user rules) to `~/.claude/CLAUDE.md`. It never
+overwrites anything it does not own: an existing skill directory, or a symlink
+pointing somewhere else, is skipped with a warning. Re-running it is safe —
+already-managed links are refreshed and the block is replaced in place.
+
+Remove with one command:
 
 ```bash
-mkdir -p ~/.claude/skills
-for s in ~/agentic-principles/skills/*/; do
-  ln -sfn "$s" ~/.claude/skills/"$(basename "$s")"
-done
+~/agentic-principles/eject.sh
 ```
 
-3. Import the always-on layer. Append these lines to `~/.claude/CLAUDE.md`
-   (create the file if it does not exist):
+`eject.sh` is the exact reverse: it removes only the symlinks that point into
+the clone and only the managed block. The rest of your skills and `CLAUDE.md`
+are untouched.
 
-```markdown
-@~/agentic-principles/principles/honesty.md
-@~/agentic-principles/principles/karpathy-guidelines.md
-@~/agentic-principles/user-rules/coding-principles.md
-@~/agentic-principles/user-rules/communication.md
-```
+Restart Claude Code after either command. Verify after install: in a new
+session the eight skills appear in the available-skills list, and `/memory`
+shows the imported principle files.
 
-Claude Code inlines `@path` imports at session start, so the principles stay
-in sync with the clone.
-
-4. Verify: start a new Claude Code session; the eight skills should appear in
-   the available-skills list, and `/memory` should show the imported files.
+Note: if another config manager already installed skills with the same names
+(as real directories), `inject.sh` reports them as skipped — that is expected;
+remove the old copies first if you want this clone to own them.
 
 ## Windows
 
@@ -76,7 +75,8 @@ Get-ChildItem "$env:USERPROFILE\agentic-principles\skills" -Directory |
 ## Updating
 
 - macOS/Linux: `git pull` in the clone — symlinked skills and `@`-imported
-  principles pick up the changes automatically.
+  principles pick up the changes automatically; re-run `inject.sh` only when
+  the skill list itself changed.
 - Windows (copied skills): `git pull`, then re-run the copy step from item 2.
 
 ## Per-project instead of global

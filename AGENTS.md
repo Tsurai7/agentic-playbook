@@ -1,9 +1,8 @@
 # Agent instructions (portable)
 
 Use this file as a project `AGENTS.md`, or inline it into a global always-on
-layer (`~/.claude/CLAUDE.md`, Cursor rules). Everything referenced here lives in
-this repository and requires no toolset beyond `git`, `gh`, and an agent
-harness.
+layer (`~/.claude/CLAUDE.md`). Everything referenced here lives in this
+repository and requires no toolset beyond `git`, `gh`, and an agent harness.
 
 ## Global defaults
 

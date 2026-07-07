@@ -1,9 +1,9 @@
 # agentic-principles
 
 Portable, toolset-agnostic guidance for coding agents: always-on principles,
-user rules, and triggered skills. Everything here works with any agent harness
-(Claude Code, Cursor, or a plain `AGENTS.md` consumer) and depends on nothing
-beyond standard tools (`git`, `gh`).
+user rules, and triggered skills. Built for Claude Code; the content is plain
+markdown, so any `AGENTS.md` consumer can adopt it. Depends on nothing beyond
+standard tools (`git`, `gh`).
 
 This repository originated as the portable layer of a private agent-config
 repo and is now the source of truth for that layer.
@@ -41,15 +41,14 @@ repo and is now the source of truth for that layer.
 
 ## How to consume
 
-Step-by-step instructions for Claude Code on macOS/Linux and Windows:
-[SETUP.md](SETUP.md).
+**Claude Code** — one command each way:
 
-**Claude Code** — copy or symlink `skills/*` into `~/.claude/skills/` (or a
-project's `.claude/skills/`), and inline `principles/*.md` +
-`user-rules/*.md` into `~/.claude/CLAUDE.md` or the project `CLAUDE.md`.
+```bash
+./inject.sh   # symlink skills + add a managed always-on block to ~/.claude/CLAUDE.md
+./eject.sh    # exact reverse; touches nothing it does not own
+```
 
-**Cursor** — render each principle and user rule as an `alwaysApply: true`
-rule in `~/.cursor/rules/`; skills map to description-triggered rules.
+Step-by-step details and Windows instructions: [SETUP.md](SETUP.md).
 
 **Anything else** — [AGENTS.md](AGENTS.md) and the principle files are plain
 markdown; include them in whatever always-on layer your harness has.
