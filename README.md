@@ -41,6 +41,9 @@ repo and is now the source of truth for that layer.
 
 ## How to consume
 
+Step-by-step instructions for Claude Code on macOS/Linux and Windows:
+[SETUP.md](SETUP.md).
+
 **Claude Code** — copy or symlink `skills/*` into `~/.claude/skills/` (or a
 project's `.claude/skills/`), and inline `principles/*.md` +
 `user-rules/*.md` into `~/.claude/CLAUDE.md` or the project `CLAUDE.md`.
