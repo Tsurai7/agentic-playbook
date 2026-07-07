@@ -42,6 +42,8 @@ repo and is now the source of truth for that layer.
     efficiency; cited and dated.
   - [ai-for-software-engineering.md](docs/ai-for-software-engineering.md) — a
     practitioner's playbook for getting real value out of coding agents.
+  - [ai-in-daily-life.md](docs/ai-in-daily-life.md) — a practical guide to AI
+    assistants outside of coding.
 
 ## How to consume
 
