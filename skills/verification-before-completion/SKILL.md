@@ -45,4 +45,4 @@ OUTPUT: [relevant success lines]
 VERDICT: [claim supported only if output matches]
 ```
 
-Complements superpowers verification skill; keep this gate for every "done" statement.
+Keep this gate for every "done" statement.

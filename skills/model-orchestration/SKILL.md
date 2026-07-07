@@ -84,7 +84,7 @@ status protocol, and environment notes — so a delegation prompt only needs the
 | `verifier` | mid | an AC list + gate commands (read-only check) |
 | `researcher` | mid + web | a question or doc to refresh, citations required |
 
-The wave mechanics that two live waves (June–July 2026) proved out:
+These delegation mechanics were proven out in two live multi-agent delegation waves (June–July 2026):
 
 1. **Plan files, not chat specs.** Each delegation gets a written plan with hard
    acceptance criteria and an explicit file scope; plans in the same wave never share
