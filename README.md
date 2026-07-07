@@ -10,8 +10,6 @@ repo and is now the source of truth for that layer.
 
 ## Layout
 
-- [AGENTS.md](AGENTS.md) — entry document tying principles, rules, and skills
-  together. Use as-is for a project `AGENTS.md` or a global `CLAUDE.md`.
 - [principles/](principles/README.md) — always-on behavioral guidance, loaded
   every turn:
   - [honesty.md](principles/honesty.md) — back claims with evidence, separate
@@ -50,15 +48,8 @@ repo and is now the source of truth for that layer.
 
 Step-by-step details and Windows instructions: [SETUP.md](SETUP.md).
 
-**Anything else** — [AGENTS.md](AGENTS.md) and the principle files are plain
-markdown; include them in whatever always-on layer your harness has.
-
-## What does not belong here
-
-Skills bound to a specific local toolset — MCP servers, personal CLIs, local
-pipelines — stay in the consuming config repo. The test for inclusion: a skill
-lands here only if it works on a machine with nothing but `git`, `gh`, and an
-agent harness installed.
+**Anything else** — the principle and skill files are plain markdown; include
+them in whatever always-on layer your harness has.
 
 ## License
 
