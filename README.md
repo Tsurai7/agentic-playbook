@@ -17,11 +17,13 @@ repo and is now the source of truth for that layer.
   - [karpathy-guidelines.md](principles/karpathy-guidelines.md) — think before
     coding, goal-driven execution; simplicity and surgical-change rules merged
     into coding-principles.
-- [user-rules/](user-rules/coding-principles.md) — always-on rules:
-  - [coding-principles.md](user-rules/coding-principles.md) — minimal scope, no
+- [rules/](rules/coding-principles.md) — always-on rules:
+  - [coding-principles.md](rules/coding-principles.md) — minimal scope, no
     over-engineering, existing conventions, comments, useful tests only.
-  - [communication.md](user-rules/communication.md) — how to write responses,
-    code citations, commit and PR descriptions.
+  - [communication.md](rules/communication.md) — response style: prose,
+    proportionality, commit and PR descriptions.
+  - [code-citations.md](rules/code-citations.md) — how to show and reference
+    code in responses, per harness.
 - `skills/` — triggered guidance, loaded on description match:
   - [office-hours](skills/office-hours/SKILL.md) — pressure-test an idea before
     building it.
@@ -61,8 +63,8 @@ repo and is now the source of truth for that layer.
 
 Step-by-step details and Windows instructions: [SETUP.md](SETUP.md).
 
-**Anything else** — the principle and skill files are plain markdown; include
-them in whatever always-on layer your harness has.
+**Anything else** — the principle, rule, and skill files are plain markdown;
+include them in whatever always-on layer your harness has.
 
 ## License
 

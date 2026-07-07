@@ -28,7 +28,7 @@ Strong success criteria let you loop independently; weak ones ("make it work")
 force constant clarification.
 
 Simplicity-first and surgical-change rules live in
-[coding-principles](../user-rules/coding-principles.md) — same always-on layer.
+[coding-principles](../rules/coding-principles.md) — same always-on layer.
 
 ---
 

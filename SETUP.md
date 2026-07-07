@@ -2,7 +2,7 @@
 
 How to apply this repository to a local Claude Code installation. Everything is
 plain markdown: skills are auto-discovered from `~/.claude/skills/`, always-on
-principles and user rules are imported into `~/.claude/CLAUDE.md`.
+principles and rules are imported into `~/.claude/CLAUDE.md`.
 
 ## macOS / Linux
 
@@ -14,7 +14,8 @@ git clone https://github.com/Tsurai7/agentic-playbook.git ~/agentic-playbook
 ```
 
 `inject.sh` symlinks `skills/*` into `~/.claude/skills/` and appends a managed
-`@`-import block (principles + user rules) to `~/.claude/CLAUDE.md`. It never
+`@`-import block (every `principles/*.md` and `rules/*.md`, READMEs excluded)
+to `~/.claude/CLAUDE.md`. It never
 overwrites anything it does not own: an existing skill directory, or a symlink
 pointing somewhere else, is skipped with a warning. The one exception is a
 dangling symlink (its target no longer exists — say, a moved or deleted old
@@ -67,22 +68,23 @@ Get-ChildItem "$env:USERPROFILE\agentic-playbook\skills" -Directory |
 ```markdown
 @C:\Users\<you>\agentic-playbook\principles\honesty.md
 @C:\Users\<you>\agentic-playbook\principles\karpathy-guidelines.md
-@C:\Users\<you>\agentic-playbook\user-rules\coding-principles.md
-@C:\Users\<you>\agentic-playbook\user-rules\communication.md
+@C:\Users\<you>\agentic-playbook\rules\code-citations.md
+@C:\Users\<you>\agentic-playbook\rules\coding-principles.md
+@C:\Users\<you>\agentic-playbook\rules\communication.md
 ```
 
 4. Verify the same way: new session, skills listed, `/memory` shows the
    imports.
 
 Uninstall (native PowerShell) — the reverse of steps 2 and 3: remove the copied
-skill directories, then delete the four `@`-import lines you added:
+skill directories, then delete the five `@`-import lines you added:
 
 ```powershell
 Get-ChildItem "$env:USERPROFILE\agentic-playbook\skills" -Directory |
   ForEach-Object { Remove-Item "$env:USERPROFILE\.claude\skills\$($_.Name)" -Recurse -Force -ErrorAction SilentlyContinue }
 ```
 
-Then open `%USERPROFILE%\.claude\CLAUDE.md` and remove the four
+Then open `%USERPROFILE%\.claude\CLAUDE.md` and remove the five
 `@C:\Users\<you>\agentic-playbook\...` lines from step 3.
 
 ## Updating

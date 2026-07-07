@@ -5,7 +5,8 @@ set -euo pipefail
 #
 # - Symlinks skills/* into ~/.claude/skills/ (skips anything it does not own,
 #   so existing skills and other managers are never overwritten).
-# - Writes a managed always-on block with @-imports into ~/.claude/CLAUDE.md.
+# - Writes a managed always-on block into ~/.claude/CLAUDE.md: @-imports of
+#   principles/*.md and rules/*.md (READMEs excluded).
 #
 # Re-running is safe (idempotent). ./eject.sh reverses everything exactly.
 # Override the target with CLAUDE_DIR=/path (override for sandboxed runs).
@@ -64,12 +65,13 @@ if grep -qF "$BEGIN_MARK" "$CLAUDE_MD"; then
   ' "$CLAUDE_MD" >"$tmp"
   mv "$tmp" "$CLAUDE_MD"
 fi
-printf '\n%s\n' "$BEGIN_MARK
-@$REPO_DIR/principles/honesty.md
-@$REPO_DIR/principles/karpathy-guidelines.md
-@$REPO_DIR/user-rules/coding-principles.md
-@$REPO_DIR/user-rules/communication.md
-$END_MARK" >>"$CLAUDE_MD"
+imports=""
+for f in "$REPO_DIR"/principles/*.md "$REPO_DIR"/rules/*.md; do
+  [ "$(basename "$f")" = "README.md" ] && continue
+  imports="$imports
+@$f"
+done
+printf '\n%s%s\n%s\n' "$BEGIN_MARK" "$imports" "$END_MARK" >>"$CLAUDE_MD"
 
 echo "Skills: $linked linked, $skipped skipped."
 echo "Always-on block written to $CLAUDE_MD."
