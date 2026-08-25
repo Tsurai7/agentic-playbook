@@ -46,7 +46,7 @@ cell.
 
 ## Provenance
 
-Distilled from the terminus ANI retrospective (PRs 359/360, 2026-08): the
-seven costliest human-review findings were invariant violations on
-non-designed paths, while the invariants themselves existed as happy-path
-acceptance criteria.
+Distilled from an internal retrospective of two production PRs (2026-08): the
+seven costliest review findings were invariant violations on non-designed
+paths, while the invariants themselves existed as happy-path acceptance
+criteria.

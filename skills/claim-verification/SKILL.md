@@ -39,7 +39,7 @@ including ones you authored earlier.
 
 ## Provenance
 
-Two real incidents (terminus, 2026-08) that survived multi-model review and
+Two real internal incidents (2026-08) that survived multi-model review and
 fall to a single existence check: a code comment claiming "a unit test locks
 it" with no such test in the tree, and a Makefile target referencing files
 that existed on no branch.

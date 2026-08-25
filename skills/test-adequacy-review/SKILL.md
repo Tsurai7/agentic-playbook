@@ -52,9 +52,9 @@ concrete input, timing, or mutation that demonstrates it.
 
 ## Provenance
 
-Every finding class above shipped past multi-model review at least once in
-the ANI retrospective: an "ANI off" test that could not fail for its named
-reason, an accertify trigger branch exercised by zero tests, `time.Sleep(3s)`
-as a barrier, tests racing a PT10S timer, and a helper duplicating the
-server's start payload. Meta's mutation-guided test generation (FSE 2025)
+Every finding class above shipped past multi-model review at least once in an
+internal retrospective (2026-08): a feature-off test that could not fail for
+its named reason, a second trigger branch exercised by zero tests, a
+3-second sleep as a barrier, tests racing a short fallback timer, and a
+helper duplicating the server's start payload. Meta's mutation-guided test generation (FSE 2025)
 grounds the mutation discipline.

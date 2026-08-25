@@ -36,7 +36,8 @@ Classify each finding and act:
 
 ## Provenance
 
-Ratchet principle from harness-engineering practice, validated in the terminus
-ANI retrospective (2026-08): the one blocker-class bug (a BPMN gateway with no
-default flow) was found by the human reviewer *scripting a repo-wide sweep* —
-writing exactly the ratchet check the pipeline lacked.
+Ratchet principle from harness-engineering practice, validated in an internal
+production retrospective (2026-08): the one blocker-class bug (a workflow
+gateway whose outgoing flows were all conditional with no default) was found
+by a reviewer *scripting a repo-wide sweep* — writing exactly the ratchet
+check the pipeline lacked.

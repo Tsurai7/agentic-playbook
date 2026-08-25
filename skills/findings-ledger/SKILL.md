@@ -45,6 +45,6 @@ Exactly four dispositions:
 
 ## Provenance
 
-Distilled from the terminus ANI retrospective (PRs 359/360, 2026-08): roughly
-a third of a staff reviewer's comments were re-discoveries of findings agent
-reviews had already reported and lost in conversational triage.
+Distilled from an internal retrospective of two production PRs (2026-08):
+roughly a third of the second-pass reviewer's comments were re-discoveries of
+findings agent reviews had already reported and lost in conversational triage.
