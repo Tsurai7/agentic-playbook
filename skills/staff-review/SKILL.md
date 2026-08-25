@@ -56,8 +56,37 @@ refute each of your own findings — and remember risk is not proportional to
 diff size: a 5-line auth change can be critical. Deliver the verdict per the
 `answer-shapes` code-review shape.
 
+## Sibling sweep
+
+For any new unit that has peers (worker, client, adapter, handler): name the
+closest sibling, diff the new unit against it dimension by dimension —
+transport and timeouts, error handling and messages, metrics and timestamps,
+input/output mappings, logging — and justify every divergence. "Every other X
+does Y" findings live here; they are invisible within the diff.
+
+## Critic pass (high stakes)
+
+When findings gate a merge, or the change touches money, PII, or published
+contracts, dispatch an independent critic — fresh context, not the authoring
+session — with a mandatory verdict per finding: AGREE, DISAGREE with a code
+citation, or CONCERN without one. The artifact stays frozen during the
+exchange. Findings survive only with evidence; consensus without citations is
+not evidence — naive multi-agent agreement measurably underperforms a single
+reviewer.
+
+## Final-state gate
+
+Review-fix churn invalidates earlier reviews: fixes introduce new defects and
+redesigns re-route flows. Before human review, the *final* state gets one
+whole-diff pass in a fresh context (ideally a different model lineage than the
+author's), at high effort, reading only the spec, the invariant catalog, and
+the code — not the author's reasoning. Any non-trivial fix after that pass
+re-reviews the delta.
+
 ## Provenance
 
 Distilled from the gstack `/review` skill by Garry Tan
 ([garrytan/gstack](https://github.com/garrytan/gstack), MIT) — method only,
 none of the runtime (specialist dispatch, Greptile/Codex, learnings database).
+Sibling sweep, critic pass, and final-state gate added from the terminus ANI
+retrospective (2026-08) and 2025–26 review-effectiveness research.

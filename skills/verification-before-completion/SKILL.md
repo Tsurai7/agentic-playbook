@@ -22,6 +22,7 @@ Do not claim completion until you have **run** the relevant check and **seen** s
 | Build succeeds | Build command exit 0 + output |
 | Bug fixed | Reproduction steps pass after fix |
 | Lint clean | Linter output on changed files showing zero errors |
+| Test guards behavior X | The test fails when X is broken (bug reintroduced or mutated), then passes |
 
 ## Process
 
