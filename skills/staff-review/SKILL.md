@@ -103,5 +103,6 @@ cost, not coverage.
 Distilled from the gstack `/review` skill by Garry Tan
 ([garrytan/gstack](https://github.com/garrytan/gstack), MIT) — method only,
 none of the runtime (specialist dispatch, Greptile/Codex, learnings database).
-Sibling sweep, critic pass, and final-state gate added from the terminus ANI
-retrospective (2026-08) and 2025–26 review-effectiveness research.
+Sibling sweep, critic pass, final-state gate, and lens dispatch added from an
+internal production retrospective (2026-08) and 2025–26 review-effectiveness
+research.
