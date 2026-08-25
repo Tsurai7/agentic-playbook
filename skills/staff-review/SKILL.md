@@ -83,6 +83,21 @@ author's), at high effort, reading only the spec, the invariant catalog, and
 the code — not the author's reasoning. Any non-trivial fix after that pass
 re-reviews the delta.
 
+## Lens dispatch
+
+This skill is the code/platform lens. A full review of a substantial change
+runs the other lenses as **parallel fresh contexts**, each given only its own
+sources and the diff — never the author's reasoning, never another lens's
+output: spec fidelity (call the Skill tool with "spec-fidelity-review"), test
+adequacy (call the Skill tool with "test-adequacy-review"), and standing
+invariants across execution paths (call the Skill tool with
+"invariant-audit"). Report per lens and never merge or rerank findings across
+lenses — one lens's silence says nothing about another, and a single ranked
+list is how one axis masks the rest. All lenses' findings land in the
+findings-ledger. Distinct lenses find near-disjoint defect sets
+(perspective-based reading); adding a lens that overlaps an existing one adds
+cost, not coverage.
+
 ## Provenance
 
 Distilled from the gstack `/review` skill by Garry Tan

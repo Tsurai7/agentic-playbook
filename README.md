@@ -47,6 +47,12 @@ repo and is now the source of truth for that layer.
   - [lossless-doc-compress](skills/lossless-doc-compress/SKILL.md) — compress a
     document without losing information: three fates (KEEP/REMOVE/FLAG), sacred
     list, no-paraphrase boundary, accounted removals.
+  - [spec-fidelity-review](skills/spec-fidelity-review/SKILL.md) — review a diff
+    against what was asked (ticket, AC, PDR): requirement→evidence,
+    behavior→authorization, quantifier drift, spec staleness.
+  - [test-adequacy-review](skills/test-adequacy-review/SKILL.md) — judge whether
+    tests can catch what they claim: name-vs-power, trigger surface, barriers,
+    fixture honesty.
   - [answer-shapes](skills/answer-shapes/SKILL.md) — output skeletons for
     common coding deliverables.
   - [model-orchestration](skills/model-orchestration/SKILL.md) — route sub-tasks
