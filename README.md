@@ -62,6 +62,10 @@ repo and is now the source of truth for that layer.
   - [git-safety](skills/git-safety/SKILL.md) — safe commit workflow.
   - [create-pr](skills/create-pr/SKILL.md) — pull requests via `gh`.
 - `docs/` — background research the skills are grounded in:
+  - [review-effectiveness-research.md](docs/review-effectiveness-research.md) —
+    annotated sources behind the review-discipline skills: benchmarks,
+    adversarial review, perspective-based reading, mutation testing, harness
+    engineering; each with a verification mark and a read-priority verdict.
   - [ai-native-agentic-engineering.md](docs/ai-native-agentic-engineering.md) —
     how Anthropic, OpenAI, Google, and Cursor do model orchestration and token
     efficiency; cited and dated.
