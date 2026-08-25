@@ -34,7 +34,19 @@ repo and is now the source of truth for that layer.
   - [verification-before-completion](skills/verification-before-completion/SKILL.md)
     — evidence before claiming done.
   - [staff-review](skills/staff-review/SKILL.md) — staff-level code review
-    method: intent first, calibrated confidence, verified findings.
+    method: intent first, calibrated confidence, verified findings, sibling
+    sweep, critic pass, final-state gate.
+  - [findings-ledger](skills/findings-ledger/SKILL.md) — every review finding
+    reaches an explicit, evidenced disposition; nothing ships via verbal triage.
+  - [invariant-audit](skills/invariant-audit/SKILL.md) — sweep standing
+    invariants across every execution path a diff touches, not the happy path.
+  - [claim-verification](skills/claim-verification/SKILL.md) — verify every
+    checkable claim in PR text, comments, and docs against the actual tree.
+  - [review-ratchet](skills/review-ratchet/SKILL.md) — convert human review
+    findings into permanent automatic checks; the harness only tightens.
+  - [lossless-doc-compress](skills/lossless-doc-compress/SKILL.md) — compress a
+    document without losing information: three fates (KEEP/REMOVE/FLAG), sacred
+    list, no-paraphrase boundary, accounted removals.
   - [answer-shapes](skills/answer-shapes/SKILL.md) — output skeletons for
     common coding deliverables.
   - [model-orchestration](skills/model-orchestration/SKILL.md) — route sub-tasks
