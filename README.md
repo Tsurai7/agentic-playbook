@@ -62,6 +62,10 @@ repo and is now the source of truth for that layer.
   - [git-safety](skills/git-safety/SKILL.md) — safe commit workflow.
   - [create-pr](skills/create-pr/SKILL.md) — pull requests via `gh`.
 - `docs/` — background research the skills are grounded in:
+  - [agentic-delivery-pipeline.md](docs/agentic-delivery-pipeline.md) — the
+    end-to-end process the skills plug into: six stages from requirements to
+    PR, exit gates, review lenses, cross-cutting rules. Skills are the how;
+    this is the when.
   - [review-effectiveness-research.md](docs/review-effectiveness-research.md) —
     annotated sources behind the review-discipline skills: benchmarks,
     adversarial review, perspective-based reading, mutation testing, harness
